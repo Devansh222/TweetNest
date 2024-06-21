@@ -1,33 +1,5 @@
-# Byte-compiled / optimized / DLL files
-*.py[cod]
-*.$py.class
 
-
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Django stuff:
-*.log
-*.pot
-*.pyc
 __pycache__/
-
-
-# Django migrations
-*/migrations/*
-!*/migrations/__init__.py
-
-# Pycharm
-.idea/
 
 # Environments
 .env
@@ -37,11 +9,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
-
-
-# Jupyter Notebook
-.ipynb_checkpoints
 
 
 # dotenv
@@ -56,8 +23,6 @@ env/
 
 
 
-# Media files
-media/
 
 
 
@@ -66,10 +31,5 @@ media/
 
 
 
-
-
-
-
-
-# db.sqlite3
-# db.sqlite3-journal
+db.sqlite3
+db.sqlite3-journal
