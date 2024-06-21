@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+TWEET APP
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center mt-4">Welcome to TweetNest</h1> 
+
+<a class="btn btn-hello"  href="{% url 'tweet_create' %}">
+  Create a new Tweet
+</a> 
+<div class="container">  
+  <div class="row gap-4">  
+    {% for tweet in tweets %}
+      <div class="card col-sm-4" style="width: 18rem;">  {% if tweet.photo %}
+          <img src="{{ tweet.photo.url }}" class="card-img-top" alt="...">
+        {% else %}
+          <p class="card-text">This tweet has no photo.</p>
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{tweet.user.username}}</h5>
+          <p class="card-text">{{tweet.text}}</p>
+
+          {% comment %} conditionally check an user can edit or delete his tweet {% endcomment %}
+
+          {% if tweet.user == user %}
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">EDIT</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">DELETE</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

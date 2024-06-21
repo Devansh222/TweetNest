@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+TWEET APP
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center mt-4">Welcome to TweetNest</h1> 
+
+
+<h2> {% if form.instance.pk %} 
+    Edit Tweet 
+    {% else %} 
+    Create tweet 
+    {%endif%}
+    {% comment %} because it input the images also  , {{ form.as_p }} form as paragraph  and we are using csrf security {% endcomment %}
+    <form method="post" enctype="multipart/form-data"
+        class="form">
+        {% csrf_token %}
+        {{ form.as_p }}       
+        
+        <button class="btn btn-warning" style="margin-top:10px" type="submit">Submit</button>
+        
+    </form>
+    <a href="{% url 'tweet_list' %}" class="btn btn-warning px-2.8 py-2 mt-4">Back to Tweet List</a>
+</h2>
+{% endblock %}
+
+
+
+
+{% comment %} 
+{% extends "layout.html" %}
+
+{% block title %}
+TWEET APP
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Welcome to Django Project</h1>
+
+  <h2>
+    {% if form.instance.pk %}
+      Edit Tweet
+    {% else %}
+      Create Tweet
+    {% endif %}
+  </h2>
+
+  <form method="post" enctype="multipart/form-data" class="form-group">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <div class="form-group mt-30">
+      <button class="btn btn-warning" type="submit">Submit</button>
+    </div>
+  </form>
+
+  <a href="{% url 'tweet_list' %}" class="btn btn-warning px-4 py-2 mt-3 border border-primary">Back to Tweet List</a>
+</div>
+
+{% endblock %} {% endcomment %}
+
+
