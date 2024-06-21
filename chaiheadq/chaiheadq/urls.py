@@ -28,4 +28,3 @@ urlpatterns = [
     path('', include('tweet.urls')),  # Replace 'yourapp' with your main app name
 ] + static(settings.MEDIA_URL, document_root=settings.
     MEDIA_ROOT)
-
